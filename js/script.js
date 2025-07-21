@@ -1,3 +1,5 @@
+// informazione della chiamata dell'api
+
 const information = [
     {
         "id": 1,
@@ -37,7 +39,10 @@ const information = [
     }
 ]
 
+// recupero l'id container
 const cardContainer = document.getElementById('cardContainer')
+
+// dichiarazione della funzione arrow per creare l'html della card
 
 const cardGenerate = ({ title, date, url }) => {
     return `
@@ -52,6 +57,8 @@ const cardGenerate = ({ title, date, url }) => {
         </div>
     `;
 };
+
+// creato ciclo per inserire una card dopo l'altra
 
 information.forEach(member => {
     cardContainer.innerHTML += cardGenerate(member);
