@@ -1,4 +1,4 @@
-[
+const information = [
     {
         "id": 1,
         "title": "Skate Park",
@@ -36,3 +36,25 @@
         "url": "https://marcolanci.it/boolean/assets/pictures/6.png"
     }
 ]
+
+const cardContainer = document.getElementById('cardContainer')
+
+const cardGenerate = ({ title, date, url }) => {
+    return `
+        <div class="col-md-6 col-lg-4 d-flex justify-content-center mb-4">
+            <div class="card w-75">
+                <img src="${url}" class="card-img-top" alt="${title}">
+                <div class="card-body">
+                    <h5 class="card-title">${title}</h5>
+                    <p class="card-text">${date}</p>
+                </div>
+            </div>
+        </div>
+    `;
+};
+
+information.forEach(member => {
+    cardContainer.innerHTML += cardGenerate(member);
+});
+
+
