@@ -1,6 +1,6 @@
 // informazione della chiamata dell'api
 
-const information = [
+ [
     {
         "id": 1,
         "title": "Skate Park",
@@ -58,10 +58,20 @@ const cardGenerate = ({ title, date, url }) => {
     `;
 };
 
-// creato ciclo per inserire una card dopo l'altra
+// chiamata ajax all'api
 
-information.forEach(member => {
-    cardContainer.innerHTML += cardGenerate(member);
-});
+
+axios.get('https://lanciweb.github.io/demo/api/pictures/').then(response => {
+    const pictures = response.data;
+    let htmlContent = "";
+
+    pictures.forEach(picture => {
+      htmlContent += cardGenerate(picture);
+    });
+
+    cardContainer.innerHTML = htmlContent;
+  });
+
+
 
 
