@@ -1,3 +1,10 @@
 * {
     font-family: "Edu Tas Beginner";
 }
+
+
+.card:hover {
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    transform: scale(1.2) rotate(10deg);
+}
