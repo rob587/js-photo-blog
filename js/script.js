@@ -1,6 +1,6 @@
 // informazione della chiamata dell'api
 
- [
+[
     {
         "id": 1,
         "title": "Skate Park",
@@ -66,12 +66,14 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/').then(response => {
     let htmlContent = "";
 
     pictures.forEach(picture => {
-      htmlContent += cardGenerate(picture);
+        htmlContent += cardGenerate(picture);
     });
 
     cardContainer.innerHTML = htmlContent;
-  });
+});
 
 
-
+document.addEventListener('DOMContentLoaded', function () {
+    const overlay = document.getElementById('pageOverlay')
+})
 
