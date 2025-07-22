@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const overlay = document.getElementById('pageOverlay');
     const button = document.getElementById('closeOverlayBtn');
     const cardContainer = document.getElementById('cardContainer');
-    const overlayImage = overlay.querySelector('img'); // selezioniamo solo l'immagine dell'overlay
+    const overlayImage = overlay.querySelector('img'); // seleziono solo l'immagine dell'overlay
 
     // Chiudi overlay
     button.addEventListener('click', function () {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
     };
 
-    // Chiamata API
+    // Chiamata dell'api
     axios.get('https://lanciweb.github.io/demo/api/pictures/')
         .then(response => {
             const pictures = response.data;
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             cardContainer.innerHTML = htmlContent;
 
-            // Aggiungo l'event listener dopo che le card sono state aggiunte
+            // Aggiungo l'evento dopo che le card sono state aggiunte
             cardContainer.addEventListener('click', function (e) {
                 const clickedCard = e.target.closest('.card');
                 if (clickedCard) {
