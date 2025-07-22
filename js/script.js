@@ -39,7 +39,11 @@
     }
 ]
 
+// attendo che il dom sia completamente caricato
+
 document.addEventListener('DOMContentLoaded', function () {
+
+    // recupero gli elementi
     const overlay = document.getElementById('pageOverlay');
     const button = document.getElementById('closeOverlayBtn');
     const cardContainer = document.getElementById('cardContainer');
@@ -67,6 +71,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Chiamata dell'api
     axios.get('https://lanciweb.github.io/demo/api/pictures/')
+
+    // dati salvati in picture
         .then(response => {
             const pictures = response.data;
             let htmlContent = "";
